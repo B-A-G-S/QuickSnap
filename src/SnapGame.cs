@@ -29,8 +29,7 @@ namespace CardGames
         
             if (myGame.IsStarted)
             {
-                if (SwinGame.KeyTyped(KeyCode.vk_LSHIFT) &&
-                SwinGame.KeyTyped(KeyCode.vk_RSHIFT))
+                if (SwinGame.KeyTyped(KeyCode.vk_LSHIFT) && SwinGame.KeyTyped(KeyCode.vk_RSHIFT))
                 {
                     //TODO: add sound effects
                 }
@@ -51,10 +50,11 @@ namespace CardGames
 		/// <param name="myGame">The details of the game -- mostly top card and scores.</param>
 		private static void DrawGame(Snap myGame)
 		{
-			SwinGame.ClearScreen(Color.White);
+            SwinGame.DrawBitmap("cardsBoard.png", 0, 0);
 
-			// Draw the top card
-			Card top = myGame.TopCard;
+
+            // Draw the top card
+            Card top = myGame.TopCard;
 			if (top != null)
 			{
 				SwinGame.DrawText ("Top Card is " + top.ToString (), Color.RoyalBlue, 0, 20);
